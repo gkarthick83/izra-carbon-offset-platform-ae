@@ -64,47 +64,53 @@ const LearnAboutIzra = () => {
         onLogout={() => {}} />
 
 
-      <main className="main-content">
-        <section className="relative min-h-[500px] flex items-center overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <Image
-              src="https://img.rocket.new/generatedImages/rocket_gen_img_18c73a028-1766402111306.png"
-              alt="Lush mangrove forest representing IZRA carbon offset ecosystem"
-              className="w-full h-full object-cover" />
+      <main className="flex-grow">
+        <section className="relative pt-0 pb-16 md:pb-20 lg:pb-24 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900">
+          <div className="container-safe">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              {/* Left Column - Text Content */}
+              <div className="space-y-6 md:space-y-8 order-2 lg:order-1">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 border border-emerald-400/30">
+                  <Icon name="Info" size={20} className="text-emerald-400" />
+                  <span className="text-sm md:text-base font-medium text-emerald-300">
+                    {text?.hero?.badge}
+                  </span>
+                </div>
 
-            <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
-          </div>
+                <div className="space-y-3 md:space-y-4">
+                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight drop-shadow-lg">
+                    {text?.hero?.title}
+                  </h1>
+                  <h2 className="text-xl md:text-2xl font-semibold text-emerald-300 drop-shadow-md">
+                    {text?.hero?.subtitle}
+                  </h2>
+                </div>
 
-          <div className="container-safe relative z-10 py-16 md:py-20">
-            <div className="max-w-3xl space-y-6">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-                <Icon name="Info" size={20} className="text-primary" />
-                <span className="text-sm md:text-base font-medium text-primary">
-                  {text?.hero?.badge}
-                </span>
+                <p className="text-base md:text-lg text-slate-200 leading-relaxed max-w-2xl drop-shadow-md">
+                  {text?.hero?.description}
+                </p>
+
+                <Button
+                  variant="default"
+                  size="lg"
+                  iconName="ArrowRight"
+                  iconPosition="right"
+                  onClick={() => navigate('/plant-tree-sponsorship')}
+                  className="mt-4"
+                >
+                  {text?.hero?.cta}
+                </Button>
               </div>
 
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-                {text?.hero?.title}
-              </h1>
-
-              <h2 className="text-xl md:text-2xl font-semibold text-primary">
-                {text?.hero?.subtitle}
-              </h2>
-
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                {text?.hero?.description}
-              </p>
-
-              <Button
-                variant="default"
-                size="lg"
-                iconName="ArrowRight"
-                iconPosition="right"
-                onClick={() => navigate('/plant-tree-sponsorship')}>
-
-                {text?.hero?.cta}
-              </Button>
+              {/* Right Column - Image */}
+              <div className="order-1 lg:order-2 relative h-full min-h-[300px] md:min-h-[400px] lg:min-h-[500px] rounded-xl overflow-hidden">
+                <Image
+                  src="https://img.rocket.new/generatedImages/rocket_gen_img_18c73a028-1766402111306.png"
+                  alt="Lush mangrove forest representing IZRA carbon offset ecosystem"
+                  className="w-full h-full object-cover rounded-xl shadow-2xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent rounded-xl" />
+              </div>
             </div>
           </div>
         </section>

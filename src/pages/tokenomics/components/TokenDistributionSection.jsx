@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Icon from '../../../components/AppIcon';
 
 const TokenDistributionSection = ({ currentLanguage }) => {
   const content = {
@@ -32,57 +32,77 @@ const TokenDistributionSection = ({ currentLanguage }) => {
   };
 
   const text = content?.[currentLanguage];
+  const [activeIndex, setActiveIndex] = React.useState(null);
+
+  const COLORS = [
+    '#3B82F6', // blue-500
+    '#10B981', // green-500
+    '#8B5CF6', // purple-500
+    '#F59E0B', // amber-500
+    '#0D9488', // teal-500
+    '#EF4444'  // red-500
+  ];
+
+  const icons = [
+    'PieChart',
+    'Database',
+    'Users',
+    'Handshake',
+    'DollarSign',
+    'Shield'
+  ];
 
   return (
-    <section className="py-16 md:py-20">
-      <div className="container-safe">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+    <section className="py-8 w-full">
+      <div className="w-full px-4">
+        <div className="w-full mb-8 text-center">
+          <h2 className="text-3xl font-bold text-foreground mb-2">
             {text?.title}
           </h2>
-          <p className="text-lg text-muted-foreground mb-2">
+          <p className="text-lg text-muted-foreground mb-1">
             {text?.subtitle}
           </p>
-          <p className="text-xl font-semibold text-primary">
+          <p className="text-lg text-muted-foreground">
             {text?.totalSupply}
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            {text?.distribution?.map((item, index) => (
-              <div key={index} className="bg-background rounded-xl p-6 shadow-sm border border-border">
-                <div className="flex items-start gap-4">
-                  <div className={`w-12 h-12 rounded-lg ${item?.color} flex items-center justify-center flex-shrink-0`}>
-                    <span className="text-white font-bold text-lg">{item?.percentage}%</span>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-foreground mb-1">
-                      {item?.category}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {text?.distribution?.map((item, index) => (
+            <div 
+              key={index}
+              className="p-4 rounded-lg border border-border hover:border-primary/30 hover:bg-muted/5 transition-colors"
+            >
+              <div className="flex items-start gap-4">
+                <div 
+                  className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+                  style={{ backgroundColor: `${COLORS[index % COLORS.length]}20` }}
+                >
+                  <Icon 
+                    name={icons[index % icons.length]} 
+                    className="w-5 h-5" 
+                    style={{ color: COLORS[index % COLORS.length] }}
+                  />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex justify-between items-start">
+                    <h3 className="font-medium text-foreground">
+                      {item.category}
                     </h3>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      {item?.description}
-                    </p>
-                    <p className="text-sm font-medium text-primary">
-                      {item?.amount} IZRA
-                    </p>
+                    <span className="text-base font-medium text-primary">
+                      {item.percentage}%
+                    </span>
                   </div>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    {item.amount}
+                  </p>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    {item.description}
+                  </p>
                 </div>
               </div>
-            ))}
-          </div>
-
-          <div className="bg-muted/50 rounded-xl p-6">
-            <div className="flex flex-col gap-2">
-              {text?.distribution?.map((item, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <div className={`w-4 h-4 rounded ${item?.color}`} />
-                  <span className="text-sm text-foreground flex-1">{item?.category}</span>
-                  <span className="text-sm font-semibold text-foreground">{item?.percentage}%</span>
-                </div>
-              ))}
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

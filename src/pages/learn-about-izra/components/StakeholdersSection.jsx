@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from '../../../components/AppIcon';
+import Image from '../../../components/AppImage';
 
 const StakeholdersSection = ({ currentLanguage }) => {
   const content = {
@@ -79,32 +80,58 @@ const StakeholdersSection = ({ currentLanguage }) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {text?.stakeholders?.map((stakeholder, index) => (
-            <div key={index} className="bg-background rounded-xl p-6 shadow-sm border border-border">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Icon name={stakeholder?.icon} size={24} className="text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
-                    {stakeholder?.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {stakeholder?.description}
-                  </p>
-                </div>
-              </div>
-              <div className="space-y-2 mt-4">
-                {stakeholder?.benefits?.map((benefit, idx) => (
-                  <div key={idx} className="flex items-center gap-2">
-                    <Icon name="Check" size={16} className="text-primary flex-shrink-0" />
-                    <span className="text-sm text-foreground">{benefit}</span>
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+          {/* Left Column - Stakeholder Cards */}
+          <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {text?.stakeholders?.map((stakeholder, index) => (
+              <div 
+                key={index} 
+                className="bg-background rounded-xl p-6 shadow-sm border border-border hover:shadow-md transition-shadow h-full flex flex-col"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name={stakeholder?.icon} size={24} className="text-primary" />
                   </div>
-                ))}
+                  <div>
+                    <h3 className="text-xl font-semibold text-foreground mb-2">
+                      {stakeholder?.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                      {stakeholder?.description}
+                    </p>
+                    <div className="space-y-2 mt-auto pt-4">
+                      {stakeholder?.benefits?.map((benefit, idx) => (
+                        <div key={idx} className="flex items-start gap-2">
+                          <Icon name="Check" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-foreground">{benefit}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
+            ))}
+          </div>
+
+          {/* Right Column - Image */}
+          <div className="lg:col-span-2 relative h-full min-h-[500px] rounded-xl overflow-hidden shadow-lg sticky top-6">
+            <Image
+              src="https://img.rocket.new/generatedImages/rocket_gen_img_18c73a028-1766402111306.png"
+              alt={currentLanguage === 'en' ? "Stakeholders collaborating on IZRA platform" : "تعاون أصحاب المصلحة على منصة إزرع"}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <h3 className="text-2xl font-bold mb-2">
+                {currentLanguage === 'en' ? 'Join Our Ecosystem' : 'انضم إلى نظامنا البيئي'}
+              </h3>
+              <p className="text-white/90 text-sm">
+                {currentLanguage === 'en' 
+                  ? "Become part of the UAE's leading carbon offset platform and make a real environmental impact."
+                  : "كن جزءًا من المنصة الرائدة في تعويض الكربون في الإمارات واصنع تأثيرًا بيئيًا حقيقيًا."}
+              </p>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

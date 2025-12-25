@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const RevenueModelSection = ({ currentLanguage }) => {
   const content = {
     en: {
@@ -15,15 +14,6 @@ const RevenueModelSection = ({ currentLanguage }) => {
           { percentage: "20%", recipient: "Environmental Projects", amount: "0.4% of trade", description: "Direct funding for UAE conservation initiatives" },
           { percentage: "10%", recipient: "Reserve Fund", amount: "0.2% of trade", description: "Emergency reserves and future development" }
         ]
-      },
-      example: {
-        title: "Revenue Example",
-        scenario: "If $1,000,000 in carbon credits are traded monthly:",
-        calculations: [
-          { label: "Total Platform Fee (2%)", value: "$20,000" },
-          { label: "Token Holder Distribution (40%)", value: "$8,000" },
-          { label: "Annual Token Holder Revenue", value: "$96,000" }
-        ]
       }
     },
     ar: {
@@ -37,15 +27,6 @@ const RevenueModelSection = ({ currentLanguage }) => {
           { percentage: "30%", recipient: "عمليات المنصة", amount: "0.6٪ من الصفقة", description: "البنية التحتية والتطوير والصيانة" },
           { percentage: "20%", recipient: "المشاريع البيئية", amount: "0.4٪ من الصفقة", description: "التمويل المباشر لمبادرات الحفاظ على البيئة في الإمارات" },
           { percentage: "10%", recipient: "صندوق الاحتياطي", amount: "0.2٪ من الصفقة", description: "احتياطيات الطوارئ والتطوير المستقبلي" }
-        ]
-      },
-      example: {
-        title: "مثال على الإيرادات",
-        scenario: "إذا تم تداول أرصدة كربون بقيمة 1,000,000 دولار شهريًا:",
-        calculations: [
-          { label: "إجمالي رسوم المنصة (2٪)", value: "$20,000" },
-          { label: "توزيع حامل الرمز (40٪)", value: "$8,000" },
-          { label: "إيرادات حامل الرمز السنوية", value: "$96,000" }
         ]
       }
     }
@@ -65,7 +46,7 @@ const RevenueModelSection = ({ currentLanguage }) => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-8">
+        <div className="max-w-4xl mx-auto">
           <div className="bg-primary/5 rounded-xl p-8 border border-primary/20">
             <div className="text-center mb-6">
               <div className="text-5xl font-bold text-primary mb-2">
@@ -89,23 +70,6 @@ const RevenueModelSection = ({ currentLanguage }) => {
                       <p className="text-xs text-muted-foreground">{item?.description}</p>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-muted/30 rounded-xl p-8">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
-              {text?.example?.title}
-            </h3>
-            <p className="text-muted-foreground mb-6">
-              {text?.example?.scenario}
-            </p>
-            <div className="space-y-3">
-              {text?.example?.calculations?.map((calc, index) => (
-                <div key={index} className="flex items-center justify-between p-4 bg-background rounded-lg border border-border">
-                  <span className="text-foreground font-medium">{calc?.label}</span>
-                  <span className="text-2xl font-bold text-primary">{calc?.value}</span>
                 </div>
               ))}
             </div>

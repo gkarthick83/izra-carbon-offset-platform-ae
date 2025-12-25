@@ -79,16 +79,13 @@ const HowItWorksSection = ({ currentLanguage }) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
           {text?.steps?.map((step, index) => (
             <div key={index} className="relative">
-              <div className="flex flex-col items-center text-center">
-                <div className="relative mb-6">
-                  <div className="text-6xl font-bold text-primary/10 absolute -top-4 left-1/2 transform -translate-x-1/2">
+              <div className="flex flex-col items-center text-center h-full">
+                <div className="relative mb-6 w-full">
+                  <div className="text-5xl font-bold text-primary/50 mb-4 w-full text-center">
                     {step?.number}
-                  </div>
-                  <div className="relative w-16 h-16 rounded-full bg-primary flex items-center justify-center">
-                    <Icon name={step?.icon} size={28} className="text-primary-foreground" />
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">
@@ -99,7 +96,7 @@ const HowItWorksSection = ({ currentLanguage }) => {
                 </p>
               </div>
               {index < 3 && (
-                <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-primary to-transparent" />
+                <div className="hidden lg:block absolute top-6 left-full w-1/2 h-0.5 bg-gradient-to-r from-primary/20 to-transparent" />
               )}
             </div>
           ))}

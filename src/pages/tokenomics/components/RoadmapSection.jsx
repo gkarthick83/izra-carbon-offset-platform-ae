@@ -8,7 +8,7 @@ const RoadmapSection = ({ currentLanguage }) => {
       subtitle: "Strategic Development Timeline",
       phases: [
         {
-          quarter: "Q1 2025",
+          quarter: "Q1 2026",
           title: "Token Launch",
           status: "upcoming",
           milestones: [
@@ -19,7 +19,7 @@ const RoadmapSection = ({ currentLanguage }) => {
           ]
         },
         {
-          quarter: "Q2 2025",
+          quarter: "Q2 2026",
           title: "Ecosystem Expansion",
           status: "upcoming",
           milestones: [
@@ -30,7 +30,7 @@ const RoadmapSection = ({ currentLanguage }) => {
           ]
         },
         {
-          quarter: "Q3 2025",
+          quarter: "Q3 2026",
           title: "Utility Enhancement",
           status: "upcoming",
           milestones: [
@@ -41,7 +41,7 @@ const RoadmapSection = ({ currentLanguage }) => {
           ]
         },
         {
-          quarter: "Q4 2025",
+          quarter: "Q4 2026",
           title: "Global Scaling",
           status: "upcoming",
           milestones: [
@@ -58,7 +58,7 @@ const RoadmapSection = ({ currentLanguage }) => {
       subtitle: "الجدول الزمني للتطوير الاستراتيجي",
       phases: [
         {
-          quarter: "الربع الأول 2025",
+          quarter: "الربع الأول 2026",
           title: "إطلاق الرمز",
           status: "upcoming",
           milestones: [
@@ -69,7 +69,7 @@ const RoadmapSection = ({ currentLanguage }) => {
           ]
         },
         {
-          quarter: "الربع الثاني 2025",
+          quarter: "الربع الثاني 2026",
           title: "توسيع النظام البيئي",
           status: "upcoming",
           milestones: [
@@ -80,7 +80,7 @@ const RoadmapSection = ({ currentLanguage }) => {
           ]
         },
         {
-          quarter: "الربع الثالث 2025",
+          quarter: "الربع الثالث 2026",
           title: "تعزيز الفائدة",
           status: "upcoming",
           milestones: [
@@ -91,7 +91,7 @@ const RoadmapSection = ({ currentLanguage }) => {
           ]
         },
         {
-          quarter: "الربع الرابع 2025",
+          quarter: "الربع الرابع 2026",
           title: "التوسع العالمي",
           status: "upcoming",
           milestones: [

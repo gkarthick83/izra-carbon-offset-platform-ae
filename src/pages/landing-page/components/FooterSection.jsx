@@ -156,12 +156,6 @@ const FooterSection = ({ currentLanguage }) => {
                 </a>
               </li>
               <li className="flex items-start gap-2">
-                <Icon name="Phone" size={18} className="text-primary mt-1 flex-shrink-0" />
-                <a href="tel:+97144567890" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-smooth no-underline">
-                  +971 4 456 7890
-                </a>
-              </li>
-              <li className="flex items-start gap-2">
                 <Icon name="MapPin" size={18} className="text-primary mt-1 flex-shrink-0" />
                 <span className="text-sm md:text-base text-muted-foreground">
                   {currentLanguage === 'en' ?'Dubai, United Arab Emirates' :'دبي، الإمارات العربية المتحدة'}

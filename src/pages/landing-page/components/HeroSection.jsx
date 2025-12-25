@@ -35,7 +35,7 @@ const HeroSection = ({ currentLanguage, onNavigate }) => {
   const text = content?.[currentLanguage];
 
   return (
-    <section className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900">
+    <section className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 -mt-20 pt-20">
       <div className="absolute inset-0 z-0">
         <video
           autoPlay
@@ -48,7 +48,7 @@ const HeroSection = ({ currentLanguage, onNavigate }) => {
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-emerald-900/80" />
       </div>
-      <div className="container-safe relative z-10 py-12 md:py-16 lg:py-20">
+      <div className="container-safe relative z-10 py-4 md:py-8 lg:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="space-y-6 md:space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 border border-emerald-400/30">

@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from '../../../components/AppIcon';
+import Image from '../../../components/AppImage';
 
 const TechnologySection = ({ currentLanguage }) => {
   const content = {
@@ -71,24 +72,54 @@ const TechnologySection = ({ currentLanguage }) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {text?.features?.map((feature, index) => (
-            <div key={index} className="bg-background rounded-xl p-6 shadow-sm border border-border hover:shadow-md transition-shadow">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Icon name={feature?.icon} size={24} className="text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
-                    {feature?.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {feature?.description}
-                  </p>
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+          {/* Left Column - Image */}
+          <div className="lg:col-span-2 relative h-full min-h-[500px] rounded-xl overflow-hidden shadow-lg">
+            <Image
+              src="https://images.unsplash.com/photo-1664022617645-cf71791942e4?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt={currentLanguage === 'en' ? "Blockchain and NFT technology powering IZRA platform" : "تكنولوجيا البلوكشين والعملات غير القابلة للاستبدال (NFT) تدعم منصة إزرع"}
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = 'https://via.placeholder.com/800x600/0f172a/ffffff?text=IZRA+Blockchain';
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <h3 className="text-2xl font-bold mb-2">
+                {currentLanguage === 'en' ? 'Transparent & Secure' : 'شفاف وآمن'}
+              </h3>
+              <p className="text-white/90 text-sm">
+                {currentLanguage === 'en'
+                  ? "Powered by blockchain for complete transparency and security in every transaction."
+                  : "مدعوم بتقنية البلوكشين لضمان الشفافية الكاملة والأمان في كل معاملة."}
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column - Features */}
+          <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {text?.features?.map((feature, index) => (
+              <div 
+                key={index} 
+                className="bg-background rounded-xl p-6 shadow-sm border border-border hover:shadow-md transition-shadow h-full"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name={feature?.icon} size={24} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-foreground mb-2">
+                      {feature?.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {feature?.description}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
