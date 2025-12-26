@@ -46,14 +46,21 @@ const LandingPage = () => {
 
       <main className="main-content">
         <HeroSection 
+          currentLanguage={currentLanguage}
           onNavigate={handleNavigation}
         />
-        <EmiratesCoverageSection currentLanguage={currentLanguage} />
+        <EmiratesCoverageSection 
+          currentLanguage={currentLanguage}
+          onNavigate={handleNavigation}
+        />
         <SponsorshipPackagesSection 
           currentLanguage={currentLanguage} 
           onNavigate={handleNavigation}
         />
-        <BlockchainTransparencySection currentLanguage={currentLanguage} />
+        <BlockchainTransparencySection 
+          currentLanguage={currentLanguage}
+          onNavigate={handleNavigation}
+        />
         <MarketplacePreviewSection 
           currentLanguage={currentLanguage} 
           onNavigate={handleNavigation}
@@ -62,7 +69,9 @@ const LandingPage = () => {
           currentLanguage={currentLanguage} 
           onNavigate={handleNavigation}
         />
-        <PartnerShowcaseSection currentLanguage={currentLanguage} />
+        <PartnerShowcaseSection 
+          currentLanguage={currentLanguage}
+        />
       </main>
 
       <FooterSection 
